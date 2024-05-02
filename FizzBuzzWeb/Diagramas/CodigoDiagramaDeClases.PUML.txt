@@ -1,0 +1,58 @@
+@startuml
+Package data_storage {
+
+Interface IDataStorage {
++get_num(number)
++get_active(number)
++insert_new_number(number)
++activate_num(number)
++deactivate_num(number)
++get_range(number)
+}
+
+Class DBStorage {
+-DATA_BASE_NAME: str
+
+-DBStorage()
+-get_db_connection()
++get_num(number)
++get_active(number)
++insert_new_number(number)
++activate_num(number)
++deactivate_num(number)
++get_range(number)
+}
+}
+
+'--------------------'
+
+Class MyApp{
+-storage : DBStorage
+-fizzbuzz : FizzBuzz
+
+-MyApp(DBStorage : IDataStorage, FizzBuzz : IproblemSolver)
++get(number):str
++post(number):str
++delete(number):str
++range_post(min_limit,max_limit):str
+}
+
+'--------------------'
+
+Package problem_solver{
+
+Interface IProblemSolver{
++compute_results(number): str
+}
+
+Class FizzBuzz{
++compute_results(number): str
+}
+}
+
+DBStorage ..|> IDataStorage
+FizzBuzz ..|> IProblemSolver
+MyApp *.. IProblemSolver
+MyApp *.. IDataStorage
+
+@enduml

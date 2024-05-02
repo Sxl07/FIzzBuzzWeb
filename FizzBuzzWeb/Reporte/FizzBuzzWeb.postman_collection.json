@@ -1,0 +1,556 @@
+{
+	"info": {
+		"_postman_id": "bda8739d-6431-4bc9-8b36-dd17fb633f7f",
+		"name": "FizzBuzzWeb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30717841"
+	},
+	"item": [
+		{
+			"name": "Present Number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Number is a valid integer\", function () {\r",
+							"    const responseData = pm.response.text();\r",
+							"    pm.expect(parseInt(responseData)).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is a string\", function () {\r",
+							"    pm.expect(typeof pm.response.text()).to.equal('string');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:81/numbers/666",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "81",
+					"path": [
+						"numbers",
+						"666"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Not Present Number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Response status code is 404\", function () {\r",
+							"  pm.expect(pm.response.code).to.equal(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Number is a valid integer\", function () {\r",
+							"    const responseData = pm.response.text();\r",
+							"    pm.expect(parseInt(responseData)).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is 'Not Found'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.equal(\"Not Found\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:81/numbers/12345",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "81",
+					"path": [
+						"numbers",
+						"12345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Not Present Number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Response status code is 201\", function () {\r",
+							"    pm.expect(pm.response.to.have.status(201));\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Number is a valid integer\", function () {\r",
+							"    const responseData = pm.response.text();\r",
+							"    pm.expect(parseInt(responseData)).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is a string\", function () {\r",
+							"    pm.expect(typeof pm.response.text()).to.equal('string');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:81/numbers/543345",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "81",
+					"path": [
+						"numbers",
+						"543345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Not Active Number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Number is a valid integer\", function () {\r",
+							"    const responseData = pm.response.text();\r",
+							"    pm.expect(parseInt(responseData)).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is a string\", function () {\r",
+							"    pm.expect(typeof pm.response.text()).to.equal('string');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:81/numbers/45597635",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "81",
+					"path": [
+						"numbers",
+						"45597635"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Present Number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"pm.test(\"Response status code is 409\", function () {",
+							"  pm.expect(pm.response.code).to.equal(409);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Number is a valid integer\", function () {",
+							"    const responseData = pm.response.text();",
+							"    pm.expect(parseInt(responseData)).to.be.a('number');",
+							"});",
+							"",
+							"pm.test(\"Response is a string\", function () {",
+							"    pm.expect(typeof pm.response.text()).to.equal('string');",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:81/numbers/155483884",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "81",
+					"path": [
+						"numbers",
+						"155483884"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Range Numbers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body format\", function () {\r",
+							"    var formatoEsperado = /^\\d+\\s*,\\s*(Fizz|Buzz|FizzBuzz|\\d+)\\s*$/;\r",
+							"    var cuerpoRespuesta = pm.response.text();\r",
+							"    var lineas = cuerpoRespuesta.split('\\n');\r",
+							"    lineas.forEach(function (linea) {\r",
+							"        if(linea.trim() !== '') {\r",
+							"            pm.expect(linea).to.match(formatoEsperado);\r",
+							"        }\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"min_limit\" : 123681175,\r\n    \"max_limit\" : 735477762\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:81/range/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "81",
+					"path": [
+						"range",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Range Not Found Numbers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Response status code is 404\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(404);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is 'Not Found'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.equal(\"Not Found\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"min_limit\" : 127,\r\n    \"max_limit\" : 128\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:81/range/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "81",
+					"path": [
+						"range",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Range",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Response status code is 404\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(404);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is 'Not Found'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.equal(\"Not Found\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"min_limit\" : 735477762,\r\n    \"max_limit\" : 81175\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:81/range/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "81",
+					"path": [
+						"range",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Present Number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Response status code is 204\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response body is empty\", function () {\r",
+							"    pm.expect(pm.response.text()).to.be.empty;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:81/numbers/306520696",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "81",
+					"path": [
+						"numbers",
+						"306520696"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Not Present Number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"",
+							"pm.test(\"Response status code is 404\", function () {",
+							"    pm.expect(pm.response.code).to.equal(404);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response body is 'Not Found'\", function () {",
+							"    pm.expect(pm.response.text()).to.equal(\"Not Found\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:81/numbers/500500500",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "81",
+					"path": [
+						"numbers",
+						"500500500"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
